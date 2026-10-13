@@ -1,0 +1,37 @@
+AKanni x Matrix Prank — Render deployment on Windows
+
+1) Extract this ZIP to a simple folder, for example:
+   C:\Users\YOURNAME\Downloads\matrix-prank
+
+2) Open Command Prompt in that folder (the folder must contain manage.py).
+
+3) Test locally:
+   py -m venv .venv
+   .venv\Scripts\activate
+   python -m pip install -r requirements.txt
+   python manage.py check
+   python manage.py test
+   python manage.py runserver
+   Then open http://127.0.0.1:8000/ and test the start, sound toggle, reveal, and replay.
+   Press Ctrl+C to stop the server.
+
+4) Upload the project folder contents to a GitHub repository. Do NOT upload .venv,
+   .env files, passwords, secret keys, or local database files. .gitignore helps.
+
+5) In Render, choose New + -> Blueprint, connect the GitHub repository, and deploy
+   using render.yaml. The Blueprint creates a free web service and generates a secret key.
+
+If creating a Web Service manually instead of using the Blueprint:
+   Build command:
+   pip install -r requirements.txt && python manage.py collectstatic --noinput
+
+   Start command:
+   gunicorn matrixprank.wsgi:application --bind 0.0.0.0:$PORT
+
+   Environment variables:
+   DJANGO_SECRET_KEY = generate a long random secret in Render
+   DJANGO_DEBUG = False
+   DJANGO_ALLOWED_HOSTS = .onrender.com
+
+No hosted database, Cloudinary, persistent disk, or Render Shell is needed for this
+version because the website has no database-backed features and stores no visitor data.

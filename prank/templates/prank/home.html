@@ -1,0 +1,85 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#020804">
+  <title>SECURITY BREACH DETECTED</title>
+  <link rel="stylesheet" href="{% static 'prank/style.css' %}">
+</head>
+<body>
+  <canvas id="matrix-rain" aria-hidden="true"></canvas>
+  <div class="scanlines" aria-hidden="true"></div>
+
+  <section id="intro" class="intro" aria-live="assertive">
+    <div class="intro-inner">
+      <p class="eyebrow">CRITICAL SECURITY EVENT &middot; SEVERITY 1</p>
+      <h1 class="glitch" data-text="SAVE YOURSELF NOW">SAVE YOURSELF NOW</h1>
+      <p class="intro-sub">Unauthorized access detected on this device. Immediate response required.</p>
+      <div class="intro-meta">
+        <span><i class="pulse"></i> LIVE INCIDENT</span>
+        <span>INCIDENT ID INC-7F2A-91C0</span>
+        <span>THREAT LEVEL: CRITICAL</span>
+      </div>
+      <button id="begin-button" type="button">INITIATE INCIDENT RESPONSE</button>
+    </div>
+  </section>
+
+  <main id="dashboard" class="shell hidden">
+    <header class="topbar">
+      <div class="brand"><span class="status-dot"></span> SYSTEM INTEGRITY MONITOR <span class="version">v4.7.2</span></div>
+      <div class="live"><span class="pulse"></span> LIVE INCIDENT</div>
+    </header>
+
+    <section class="alert-banner">
+      <div class="alert-icon">!</div>
+      <div>
+        <p class="eyebrow">CRITICAL SECURITY EVENT &middot; SEVERITY 1</p>
+        <h2 class="banner-title">YOUR DEVICE HAS BEEN ATTACKED</h2>
+        <p class="subtitle">Unauthorized access detected. Immediate response required.</p>
+      </div>
+    </section>
+
+    <section class="status-row">
+      <div class="metric"><span class="metric-label">THREAT LEVEL</span><strong class="danger">CRITICAL</strong></div>
+      <div class="metric"><span class="metric-label">BREACH STATUS</span><strong id="breach-status">CONFIRMED</strong></div>
+      <div class="metric"><span class="metric-label">FILES EXPOSED</span><strong id="file-count">0</strong></div>
+      <div class="metric"><span class="metric-label">TIME TO RESPONSE</span><strong id="countdown">00:30</strong></div>
+    </section>
+
+    <section class="panel terminal-panel">
+      <div class="panel-head"><span><i></i> INCIDENT RESPONSE TERMINAL</span><span id="terminal-state">ANALYZING</span></div>
+      <div id="terminal" class="terminal" role="log" aria-live="polite"></div>
+      <div class="progress-meta"><span id="progress-label">CONTAINMENT ANALYSIS</span><strong id="progress-number">0%</strong></div>
+      <div class="progress-track"><div id="progress-bar"></div></div>
+    </section>
+
+    <section class="panel files-panel">
+      <div class="panel-head"><span><i></i> FILE ACCESS LOG</span><span class="danger">ATTENTION REQUIRED</span></div>
+      <div class="file-list" id="file-list">
+        <div><span class="file-type">DOC</span><span>personal_documents.docx</span><b>SCANNING</b></div>
+        <div><span class="file-type">IMG</span><span>private_photos.zip</span><b>SCANNING</b></div>
+        <div><span class="file-type">DB</span><span>account_records.db</span><b>SCANNING</b></div>
+        <div><span class="file-type">SYS</span><span>system_backup.dat</span><b>SCANNING</b></div>
+      </div>
+    </section>
+
+    <div class="actions">
+      <button id="sound-toggle" class="secondary" type="button">ALERT SOUND: OFF</button>
+    </div>
+    <p class="footer">SECURITY OPERATIONS &middot; INCIDENT ID <span id="incident-id">INC-7F2A-91C0</span></p>
+  </main>
+
+  <section id="reveal" class="reveal hidden" aria-live="assertive">
+    <div class="reveal-card">
+      <h2>&#128514; CHALE, YOU DON FALL FOR AM!</h2>
+      <p class="reveal-main">RELAX! NOTHING HAPPEN TO YOUR DEVICE.</p>
+      <p class="reveal-sign">AKanni x</p>
+      <p class="reveal-copy">This site was built for fun and educational purposes. If you opened a random link without checking it, take this as a reminder to stop and think before clicking unknown links. Stay alert and stay safe online.</p>
+      <button id="replay-button" type="button">REPLAY</button>
+    </div>
+  </section>
+  <script src="{% static 'prank/app.js' %}"></script>
+</body>
+</html>
